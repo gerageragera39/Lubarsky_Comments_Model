@@ -9,6 +9,7 @@ import io
 import traceback
 from typing import Tuple, Optional, Dict, Any
 
+import torch
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -134,6 +135,8 @@ class TrainingService(QThread):
         self.config = config
         self._stop_requested = False
         self.logger = get_logger(self.__class__.__name__)
+        self._device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.logger.info(f"Using device: {self._device}")
 
     def request_stop(self):
         """Request the training to stop."""
@@ -230,10 +233,31 @@ class TrainingService(QThread):
 
         self.log_signal.emit(f"🧠  Загрузка модели: {self.config.model_name}")
         self.logger.debug(f"Loading model: {self.config.model_name}")
+
+        # Индикатор прогресса с анимацией
+        animation_frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+        frame_idx = [0]
+        loading = [True]
         
-        model = AutoModelForSequenceClassification.from_pretrained(
-            self.config.model_name, num_labels=3
-        )
+        def animate():
+            import time
+            while loading[0]:
+                self.log_signal.emit(f"    {animation_frames[frame_idx[0]]} Загрузка...")
+                frame_idx[0] = (frame_idx[0] + 1) % len(animation_frames)
+                time.sleep(0.1)
+        
+        # Запуск анимации в отдельном потоке
+        import threading
+        anim_thread = threading.Thread(target=animate, daemon=True)
+        anim_thread.start()
+        
+        try:
+            model = AutoModelForSequenceClassification.from_pretrained(
+                self.config.model_name, num_labels=3, use_safetensors=True
+            )
+        finally:
+            loading[0] = False
+        
         self.logger.info("Model loaded successfully")
 
         # Apply freezing strategy

@@ -170,4 +170,13 @@ trash/
 # Logs
 logs/
 
+build/
+
+venv310/
+
+venv310_classifier/
+
+dist/
+
 session.json
+best.tar.gz
