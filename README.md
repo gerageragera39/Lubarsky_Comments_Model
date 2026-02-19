@@ -33,6 +33,16 @@ Comment Network provides three integrated tools for working with YouTube comment
 
 ---
 
+## 📥 Download Pre-built Executables
+
+Want to skip the setup? Download ready-to-use `.exe` files for all applications:
+
+🔗 **[https://huggingface.co/herman3996/comments_classifier](https://huggingface.co/herman3996/comments_classifier)**
+
+All executables are pre-built and ready to run—no installation required!
+
+---
+
 ## Features
 
 - 🎯 Fetch comments from any YouTube video via API
