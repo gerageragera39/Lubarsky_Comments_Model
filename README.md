@@ -2,7 +2,7 @@
 
 A comprehensive toolkit for YouTube comment analysis, including data collection, sentiment classification, and model training capabilities.
 
-![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 ---
@@ -58,7 +58,7 @@ All executables are pre-built and ready to run—no installation required!
 
 ### Prerequisites
 
-- Python 3.10
+- Python 3.10 or higher
 - pip (Python package manager)
 
 ### Setup Steps
@@ -92,6 +92,12 @@ All executables are pre-built and ready to run—no installation required!
 4. **Install dependencies**
    ```bash
    pip install -r requirements.txt
+   ```
+
+   or
+   ```bash
+   # Installation note for Windows with CUDA:
+   pip install -r requirements.txt --index-url https://download.pytorch.org/whl/cu121
    ```
 
 5. **Configure environment variables**
@@ -387,7 +393,7 @@ pip install -r requirements.txt
 
 MIT License
 
-Copyright (c) 2026 gerageragera39
+Copyright (c) 2026 Herman Dihtenko (gerageragera39)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

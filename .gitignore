@@ -176,6 +176,8 @@ venv310/
 
 venv310_classifier/
 
+venv_311/
+
 dist/
 
 session.json
