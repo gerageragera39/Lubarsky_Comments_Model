@@ -2,7 +2,7 @@
 
 A comprehensive toolkit for YouTube comment analysis, including data collection, sentiment classification, and model training capabilities.
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 ---
@@ -58,7 +58,7 @@ All executables are pre-built and ready to run—no installation required!
 
 ### Prerequisites
 
-- Python 3.10 or higher
+- Python 3.10
 - pip (Python package manager)
 
 ### Setup Steps
@@ -72,6 +72,11 @@ All executables are pre-built and ready to run—no installation required!
 2. **Create a virtual environment** (recommended)
    ```bash
    python -m venv venv
+   ```
+   or
+
+   ```bash
+   py -3.10 -m venv venv
    ```
 
 3. **Activate the virtual environment**
@@ -380,7 +385,27 @@ pip install -r requirements.txt
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License
+
+Copyright (c) 2026 gerageragera39
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ---
 
