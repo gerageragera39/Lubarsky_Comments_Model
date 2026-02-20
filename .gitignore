@@ -27,7 +27,6 @@ share/python-wheels/
 
 # PyInstaller
 *.manifest
-*.spec
 
 # Installer logs
 pip-log.txt
@@ -177,6 +176,10 @@ venv310/
 venv310_classifier/
 
 venv_311/
+
+venv_311_classifier/
+
+venv_311_train_predict/
 
 dist/
 

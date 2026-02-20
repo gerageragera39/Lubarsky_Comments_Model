@@ -9,8 +9,8 @@ from dotenv import load_dotenv
 def get_resource_path(filename: str) -> str:
     """Get absolute path to resource, works for dev and PyInstaller build"""
     if getattr(sys, 'frozen', False):
-        # Running as compiled executable
-        base_path = sys._MEIPASS
+        # Running as compiled executable - use directory where exe is located
+        base_path = os.path.dirname(sys.executable)
     else:
         # Running in normal Python environment
         base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
